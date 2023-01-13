@@ -26,12 +26,12 @@ export const Categories: FC<CategoriesProps> = ({ filter }) => {
     const [filteredList, setFilterdList] = useState(list)
     useEffect(() => {
         filter = filter.toLowerCase()
-        setFilterdList(list.filter(f => f.name.toLowerCase().includes(filter)))
+        setList(sportsCategories.filter(f => f.name.toLowerCase().includes(filter)))
     }, [filter])
 
     return (
         <ul className={styles.list}>
-            {filteredList.map(m => {
+            {list.map(m => {
                 return (
                     <li key={m.id}>
                         <Category name={m.name} icon={m.icon} />
