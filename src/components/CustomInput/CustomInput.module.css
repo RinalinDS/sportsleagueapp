@@ -1,0 +1,15 @@
+.textInput {
+    font-size: 32px;
+    border-radius: 9px;
+    width: 100%;
+    background-color: inherit;
+    padding-left: 1.6rem;
+}
+
+.textInput::placeholder {
+    color: #aaa;
+}
+
+.textInput:focus {
+background: white;
+}
