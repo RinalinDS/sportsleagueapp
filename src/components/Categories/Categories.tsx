@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Category } from "./Category/Category";
-import styles from './Categories.module.css'
+import styles from './Categories.module.scss'
 
 type sportsCategoriesType = {
     name: string
@@ -23,7 +23,7 @@ type CategoriesProps = {
 
 export const Categories: FC<CategoriesProps> = ({ filter }) => {
     const [list, setList] = useState(sportsCategories)
-    const [filteredList, setFilterdList] = useState(list)
+    
     useEffect(() => {
         filter = filter.toLowerCase()
         setList(sportsCategories.filter(f => f.name.toLowerCase().includes(filter)))

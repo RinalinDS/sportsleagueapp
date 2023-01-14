@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from './Category.module.css'
+import styles from './Category.module.scss'
 
 type CategoryProps = {
     name: string

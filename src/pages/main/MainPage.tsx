@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
 import { Categories } from "../../components/Categories/Categories";
 import { CustomInput } from "../../components/CustomInput/CustomInput";
-import styles from './MainPage.module.css'
+import styles from './MainPage.module.scss'
 
 
 export const MainPage: FC = () => {

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC, useState } from 'react'
-import styles from './CustomInput.module.css'
+import styles from './CustomInput.module.scss'
 
 type CustomInputProps = {
   text?: string;
