@@ -1,6 +1,9 @@
+@import './../../common/styles/variables.scss';
+
 .main {
     padding: 6.4rem 0;
     font-size: 1.6rem;
+    background: $primaryBgColor;
 
     .container {
         border: 1px solid black;
