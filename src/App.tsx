@@ -1,12 +1,13 @@
 import './App.css';
-import { CustomInput } from './components/CustomInput/CustomInput';
+import { Header } from './components/Header/Header';
 import { MainPage } from './pages/main/MainPage';
 
 export const App = () => {
 
 
   return (
-    <div style={{minHeight: '100vh', background: 'lightgreen'}}>
+    <div>
+      <Header />
       <MainPage />
     </div>
   );
