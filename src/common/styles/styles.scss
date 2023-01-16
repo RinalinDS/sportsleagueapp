@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+%buttonShared {
+    padding: 0.8rem 1.6rem;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-size: $defaultFontSize;
+}
