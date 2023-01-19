@@ -21,7 +21,10 @@
     }
     .subCategory {
         @include flex(flex-start, stretch, column);
-        background: $secondaryBgColor ;
+        background: $secondaryBgColor;
+        padding: 2.4rem;
+        gap: 1.2rem;
+        list-style: none;
 
     }
 }

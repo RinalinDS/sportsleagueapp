@@ -1,12 +1,14 @@
 import { FC, useState } from "react";
+import { subCategoryType } from "../Categories";
 import styles from './Category.module.scss'
 
 type CategoryProps = {
     name: string
     icon: string
+    subCategories: subCategoryType[];
 }
 
-export const Category: FC<CategoryProps> = ({ name, icon }) => {
+export const Category: FC<CategoryProps> = ({ name, icon, subCategories }) => {
     const [isVisible, setIsVisible] = useState(true)
     const onDivCLickHandler = () => {
         setIsVisible(!isVisible)
@@ -16,14 +18,16 @@ export const Category: FC<CategoryProps> = ({ name, icon }) => {
             <div className={styles.categoryTitle} onClick={onDivCLickHandler}>
                 <span>{name}</span><span> {'>'} </span>
             </div>
-            {isVisible && <div className={styles.subCategory}>
-                <div >
-                    Premier Leaugue
-                </div>
-                <div>La League</div>
-                <div>Bundesliga</div>
-                <div>Seria A</div>
-            </div>
+            {isVisible && <ul className={styles.subCategory}>
+                
+                   {subCategories.map(m => 
+                    <li>
+                        {m.title}
+                    </li>
+                    )}
+
+                </ul>
+            
             }
         </ div>
     )
