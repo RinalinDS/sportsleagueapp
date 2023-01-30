@@ -47,7 +47,7 @@ const subCategories:subCategoryStateType = {
     ['Tennis'] : [
         {title: 'Wimbledon', id: 1, icon: 'empty'},
         {title: 'Rolan gaross' ,id: 2, icon: 'empty'},
-        {title: 'US Open' ,id: 2, icon: 'empty'},
+        {title: 'US Open' ,id: 3, icon: 'empty'},
     ],
 
 }
