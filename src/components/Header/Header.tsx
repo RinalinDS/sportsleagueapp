@@ -11,21 +11,30 @@ export const Header: FC = () => {
     const isLoggedIn = useAppSelector<boolean>(state => state.auth.isLoggedIn)
     const dispatch = useAppDispatch()
     const onClickHandler = () => {
-      dispatch(setIsLoggedIn(!isLoggedIn))
+        if (isLoggedIn) localStorage.removeItem('isLoggedIn')
+        else localStorage.setItem('isLoggedIn', 'true')
+        dispatch(setIsLoggedIn(!isLoggedIn))
     }
 
+    const buttonText = isLoggedIn ? 'Logout' : 'Login'
+    // TODO Map Links
     return (
         <header className={styles.header}>
-            <nav>
-                <Link to={Path.Main} > Main </Link>
-                <Link to={Path.Results}> Results </Link>
-
+            <nav className={styles.nav}>
+                <ul className={styles.navList}>
+                    <li>
+                        <Link to={Path.Main} > Main </Link>
+                    </li>
+                    <li>
+                        <Link to={Path.Results}> Results </Link>
+                    </li>
+                </ul>
             </nav>
             <button
                 className={styles.button}
                 onClick={onClickHandler}
             >
-                {isLoggedIn ? 'Logout' : 'Login'}
+                {buttonText}
             </button>
         </header>
     )
