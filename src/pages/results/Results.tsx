@@ -37,8 +37,8 @@ export const Results = () => {
             <div className={styles.container}>
                 <div className={styles.tableContainer}>
                     {keys.map((dataKey, index) =>
-                        <MatchdayAccordion isVisible={index === 0} title={dataKey.trim()}>
-                            <ResultsTable key={dataKey} latestResult={latestResult[dataKey]}/>
+                        <MatchdayAccordion key={dataKey} isVisible={index === 0} title={dataKey.trim()}>
+                            <ResultsTable latestResult={latestResult[dataKey]}/>
                         </MatchdayAccordion>
                     )}
                 </div>

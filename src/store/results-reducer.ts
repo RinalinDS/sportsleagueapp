@@ -8,10 +8,8 @@ export const getLatestResults = () => async (dispatch:any )=> {
     try {
         const response = await ResultsService.getResults()
         dispatch(setLatestResults(response.data))
-        console.log(response.data)
-
     } catch (e) {
-        console.log(e)
+        console.warn(e)
     }
 
 }
