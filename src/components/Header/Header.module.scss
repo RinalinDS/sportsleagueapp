@@ -7,7 +7,7 @@
 .header {
     min-height: 8.4rem;
     background-color: $secondaryBgColor;
-    @include flex(flex-end, center, 0);
+    @include flex(space-between, center, 0);
     
     padding: 1.2rem 2.4rem; 
 
