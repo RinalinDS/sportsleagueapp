@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import { subCategoryType } from "../Categories";
+import {FC, useState} from "react";
+import {subCategoryType} from "../Categories";
 import styles from './Category.module.scss'
 
 type CategoryProps = {
@@ -8,8 +8,8 @@ type CategoryProps = {
     subCategories: subCategoryType[];
 }
 
-export const Category: FC<CategoryProps> = ({ name, icon, subCategories }) => {
-    const [isVisible, setIsVisible] = useState(true)
+export const Category: FC<CategoryProps> = ({name, icon, subCategories}) => {
+    const [isVisible, setIsVisible] = useState(false)
     const onDivCLickHandler = () => {
         setIsVisible(!isVisible)
     }
@@ -19,15 +19,13 @@ export const Category: FC<CategoryProps> = ({ name, icon, subCategories }) => {
                 <span>{name}</span><span> {'>'} </span>
             </div>
             {isVisible && <ul className={styles.subCategory}>
-                
-                   {subCategories.map(m => 
-                    <li>
+                {subCategories.map(m =>
+                    <li key={m.id}>
                         {m.title}
                     </li>
-                    )}
+                )}
+            </ul>
 
-                </ul>
-            
             }
         </ div>
     )
