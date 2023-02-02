@@ -20,18 +20,21 @@ export const Header: FC = () => {
     // TODO Map Links
     return (
         <header className={styles.header}>
-            <nav className={styles.nav}>
-                <ul className={styles.navList}>
-                    <li>
-                        <Link to={Path.Main} > Main </Link>
-                    </li>
-                    <li>
-                        <Link to={Path.Results}> Results </Link>
-                    </li>
-                </ul>
-            </nav>
+            {
+                isLoggedIn &&
+                <nav className={styles.nav}>
+                    <ul className={styles.navList}>
+                        <li>
+                            <Link to={Path.Main} > Main </Link>
+                        </li>
+                        <li>
+                            <Link to={Path.Results}> Results </Link>
+                        </li>
+                    </ul>
+                </nav>
+            }
             <button
-                className={styles.button}
+                className={isLoggedIn ? styles.button : styles.flexButton}
                 onClick={onClickHandler}
             >
                 {buttonText}
