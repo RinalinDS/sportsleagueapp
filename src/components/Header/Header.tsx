@@ -1,15 +1,13 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
+import { Path } from '../../enum/Path'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { useAppSelector } from '../../hooks/useAppSelector'
-import { RootStateType } from '../../store'
 import { setIsLoggedIn } from '../../store/auth-reducer'
 import styles from './Header.module.scss'
 
-interface HeaderPropsType {
 
-}
-
-export const Header: FC<HeaderPropsType> = () => {
+export const Header: FC = () => {
     const isLoggedIn = useAppSelector<boolean>(state => state.auth.isLoggedIn)
     const dispatch = useAppDispatch()
     const onClickHandler = () => {
@@ -18,6 +16,11 @@ export const Header: FC<HeaderPropsType> = () => {
 
     return (
         <header className={styles.header}>
+            <nav>
+                <Link to={Path.Main} > Main </Link>
+                <Link to={Path.Results}> Results </Link>
+
+            </nav>
             <button
                 className={styles.button}
                 onClick={onClickHandler}

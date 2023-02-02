@@ -1,10 +1,10 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ResultsService} from "../api/ResultsService";
-import {AppThunk} from "./index";
+// import {AppThunk} from "./index";
 import {BaseResponseType, ResultsType} from "../models/ResultModel";
 
 
-export const getLatestResults = (): AppThunk => async dispatch => {
+export const getLatestResults = () => async (dispatch:any )=> {
     try {
         const response = await ResultsService.getResults()
         dispatch(setLatestResults(response.data))
