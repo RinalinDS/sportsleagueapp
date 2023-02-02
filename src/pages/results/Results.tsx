@@ -6,6 +6,7 @@ import {useAppDispatch} from "../../hooks/useAppDispatch";
 import {setLatestResults} from "../../store/results-reducer";
 import ResultsTable from "./ResultsTable";
 import {data} from "../../utils/mockData";
+import {MatchdayAccordion} from "../../components/MatchdayAccordion";
 
 export const Results = () => {
     const latestResult = useAppSelector<ResultsType>(state => state.results.latestResults)
@@ -35,8 +36,10 @@ export const Results = () => {
         <div className={styles.resultsPage}>
             <div className={styles.container}>
                 <div className={styles.tableContainer}>
-                    {keys.map(dataKey =>
-                        <ResultsTable key={dataKey} dataKey={dataKey} latestResult={latestResult[dataKey]}/>
+                    {keys.map((dataKey, index) =>
+                        <MatchdayAccordion isVisible={index === 0} title={dataKey.trim()}>
+                            <ResultsTable key={dataKey} latestResult={latestResult[dataKey]}/>
+                        </MatchdayAccordion>
                     )}
                 </div>
             </div>
