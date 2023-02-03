@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import styles from "./Results.module.scss";
+import styles from "./ResultsTable.module.scss";
 import {MatchDay} from "../../models/ResultModel";
 
 type propsType = {
