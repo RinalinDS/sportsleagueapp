@@ -1,11 +1,9 @@
 import { FC } from 'react'
-import { Link } from 'react-router-dom'
-import { Path } from '../../enum/Path'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { useAppSelector } from '../../hooks/useAppSelector'
 import { setIsLoggedIn } from '../../store/auth-reducer'
 import styles from './Header.module.scss'
-
+import { Navbar } from './Navbar/Navbar'
 
 export const Header: FC = () => {
     const isLoggedIn = useAppSelector<boolean>(state => state.auth.isLoggedIn)
@@ -17,24 +15,13 @@ export const Header: FC = () => {
     }
 
     const buttonText = isLoggedIn ? 'Logout' : 'Login'
-    // TODO Map Links
+    const buttonClass = isLoggedIn ? styles.button : styles.flexButton
+
     return (
         <header className={styles.header}>
-            {
-                isLoggedIn &&
-                <nav className={styles.nav}>
-                    <ul className={styles.navList}>
-                        <li>
-                            <Link to={Path.Main} > Main </Link>
-                        </li>
-                        <li>
-                            <Link to={Path.Results}> Results </Link>
-                        </li>
-                    </ul>
-                </nav>
-            }
+            <Navbar isLoggedIn={isLoggedIn} />
             <button
-                className={isLoggedIn ? styles.button : styles.flexButton}
+                className={buttonClass}
                 onClick={onClickHandler}
             >
                 {buttonText}

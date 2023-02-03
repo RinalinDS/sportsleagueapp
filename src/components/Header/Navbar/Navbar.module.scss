@@ -1,0 +1,21 @@
+@use './../../../common/styles/styles.scss';
+@import './../../../common/styles/variables.scss';
+@import './../../../common/styles/mixins.scss';
+
+
+    .nav {
+        .navList{
+            @include flex(center, center, row);
+            list-style: none;
+            font-size: 2rem;
+            font-weight: 550;
+            gap: 1.2rem;
+            & a:link, a:visited {
+                text-decoration: none;
+                color: $primaryFontColor;
+            }
+            & a:hover, a:active {
+               color: blue; 
+            }
+        }
+    }

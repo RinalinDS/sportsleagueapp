@@ -10,30 +10,13 @@
     @include flex(space-between, center, 0);
     padding: 1.2rem 2.4rem;
 
-    .nav {
-        .navList{
-            @include flex(center, center, row);
-            list-style: none;
-            font-size: 2rem;
-            font-weight: 550;
-            gap: 1.2rem;
-            & a:link, a:visited {
-                text-decoration: none;
-                color: $primaryFontColor;
-            }
-            & a:hover, a:active {
-               color: blue; 
-            }
-        }
-    }
-
     .button {
         @extend %buttonShared;
         color: $primaryFontColor
     }
+
     .flexButton {
-        @extend %buttonShared;
-        color: $primaryFontColor;
-        margin-left: auto;   
+        @extend .button;
+        margin-left: auto;
     }
 }
