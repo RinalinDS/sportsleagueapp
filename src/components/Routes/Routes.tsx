@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import { Path } from '../enum/Path'
-import { useAppSelector } from '../hooks/useAppSelector'
-import { Login } from '../pages/Login/Login'
-import { MainPage } from '../pages/main/MainPage'
-import { Results } from '../pages/results/Results'
+import { Path } from '../../enum/Path'
+import { useAppSelector } from '../../hooks/useAppSelector'
+import { Login } from '../../pages/Login/Login'
+import { MainPage } from '../../pages/main/MainPage'
+import { Results } from '../../pages/results/Results'
 
 
 

@@ -6,7 +6,7 @@ import {useAppDispatch} from "../../hooks/useAppDispatch";
 import {setLatestResults} from "../../store/results-reducer";
 import ResultsTable from "./ResultsTable";
 import {data} from "../../utils/mockData";
-import {MatchdayAccordion} from "../../components/MatchdayAccordion";
+import {MatchdayAccordion} from "../../components/MatchdayAccordion/MatchdayAccordion";
 
 export const Results = () => {
     const latestResult = useAppSelector<ResultsType>(state => state.results.latestResults)
