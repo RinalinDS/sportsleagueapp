@@ -4,33 +4,13 @@ import {ResultsType} from "../../models/ResultModel";
 import {useEffect, useState} from "react";
 import {useAppDispatch} from "../../hooks/useAppDispatch";
 import {setLatestResults} from "../../store/results-reducer";
-import ResultsTable from "./ResultsTable";
+import ResultsTable from "../../components/ResultsTable/ResultsTable";
 import {data} from "../../utils/mockData";
 import {MatchdayAccordion} from "../../components/MatchdayAccordion/MatchdayAccordion";
+import { useLatestResultsKeys } from '../../hooks/useLatestResultsKeys';
 
 export const Results = () => {
-    const latestResult = useAppSelector<ResultsType>(state => state.results.latestResults)
-    //TODO create a custom hook , that return keys array , and hides whole logic
-    const dispatch = useAppDispatch()
-    const [keys, setKeys] = useState<string[]>([])
-    const formatData = (data: ResultsType) => {
-        for (const dataKey in data) {
-            setKeys(prevValue => Array.from(new Set([...prevValue, dataKey])))
-        }
-    }
-
-    useEffect(() => {
-        // for situation when internet connection isn't available
-        dispatch(setLatestResults(data))
-
-        // for situation when internet connection available
-        // dispatch(getLatestResults())
-    }, [])
-
-    useEffect(() => {
-        formatData(latestResult)
-    }, [latestResult])
-
+    const {keys, latestResults} = useLatestResultsKeys()
 
     return (
         <div className={styles.resultsPage}>
@@ -38,7 +18,7 @@ export const Results = () => {
                 <div className={styles.tableContainer}>
                     {keys.map((dataKey, index) =>
                         <MatchdayAccordion key={dataKey} isVisible={index === 0} title={dataKey.trim()}>
-                            <ResultsTable latestResult={latestResult[dataKey]}/>
+                            <ResultsTable latestResult={latestResults[dataKey]}/>
                         </MatchdayAccordion>
                     )}
                 </div>
