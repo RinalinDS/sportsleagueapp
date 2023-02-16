@@ -18,7 +18,7 @@ export const Category: FC<CategoryProps> = ({name, icon, subCategories}) => {
     return (
         <div className={styles.categoryContainer}>
             <div className={styles.categoryTitle} onClick={onDivCLickHandler}>
-                <span>{name}</span><span> {'>'} </span>
+                <span>{name}</span><span>{isVisible ? <>&darr;</> : <>&rarr;</>}</span>
             </div>
             {isVisible && <ul className={styles.subCategory}>
                 {subCategories.map(m =>
