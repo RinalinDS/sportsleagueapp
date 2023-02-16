@@ -1,6 +1,8 @@
 import {FC, useState} from "react";
 import {subCategoryType} from "../Categories";
 import styles from './Category.module.scss'
+import {Link} from "react-router-dom";
+import {Path} from "../../../enum/Path";
 
 type CategoryProps = {
     name: string
@@ -21,7 +23,7 @@ export const Category: FC<CategoryProps> = ({name, icon, subCategories}) => {
             {isVisible && <ul className={styles.subCategory}>
                 {subCategories.map(m =>
                     <li key={m.id}>
-                        {m.title}
+                        <Link to={Path.Results}>{m.title}</Link>
                     </li>
                 )}
             </ul>
