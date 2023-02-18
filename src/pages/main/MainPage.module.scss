@@ -1,18 +1,15 @@
 @import './../../common/styles/variables.scss';
+@import "./../../common/styles/styles";
 
 .main {
-    padding: 6.4rem 0;
-    font-size: 1.6rem;
-    background: $primaryBgColor;
+  padding: 6.4rem 0;
+  font-size: 1.6rem;
+  background: $primaryBgColor;
 
-    .container {
-        max-width: 120rem;
-        margin: 0 auto;
-        padding: 2.4rem;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 4.8rem;
-    }
+  .container {
+    @extend .pageContainer;
+    padding: 2.4rem;
+    gap: 4.8rem;
+  }
 
 }
