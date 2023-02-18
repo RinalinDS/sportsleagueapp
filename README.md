@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Sports Results Checking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+A React app that allows users to check results of various sports such as football, basketball, NFL, tennis, etc.
 
-In the project directory, you can run:
+## Technologies Used:
 
-### `yarn start`
+1. React
+2. Redux Toolkit
+3. React-Router-Dom
+4. Thunk
+5. SASS
+6. TypeScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Description
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This app is designed to help users keep track of the latest results of various sports. Users can select the sport they
+are interested in, browse through the latest results, and search for specific teams or games. The app also features a
+live scoreboard that displays scores of ongoing games, and a notification system that sends users notifications for
+upcoming games or game results.
 
-### `yarn test`
+## Roadmap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The following features are planned to be added to the app in the future:
+Phase 1
 
-### `yarn build`
+- Set up basic project structure with Redux Toolkit, React Router, Thunk, SASS, and TypeScript
+- Create header component with navigation links to different sports categories
+- Create pages for football, basketball, NFL, and tennis categories
+- Implement API calls to retrieve sports data and display them on the appropriate pages
+- Add search functionality to allow users to search for specific teams or games
+- Implement error handling for API calls and display appropriate messages to users
+- Write unit tests for components and Redux store
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Phase 2
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Implement user authentication system using Firebase Authentication
+- Allow users to save their favorite teams or games for quick access
+- Implement a live scoreboard that displays live scores of ongoing games
+- Add a feature that allows users to predict game outcomes and track their performance over time
+- Implement a notification system that sends users notifications for upcoming games or game results
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Phase 3
 
-### `yarn eject`
+- Add support for additional sports, such as baseball, hockey, and soccer
+- Add a news section that displays news related to sports
+- Allow users to compare teams or players
+- Allow users to customize the app's theme and layout
+- Add support for multiple languages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Note: The phases listed above are not necessarily sequential, and some features may be added in parallel or out of order
+depending on project needs and priorities.
