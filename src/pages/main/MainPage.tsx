@@ -10,7 +10,6 @@ export const MainPage: FC = () => {
     const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
       setText(e.target.value)
     }
-// TODO вынести в общие стили контейнер с повторябщимимся свойтсвами и экстендить , если свойства надо изменять, добавлять
     return (
         <main className={styles.main}>
             <div className={styles.container}>
